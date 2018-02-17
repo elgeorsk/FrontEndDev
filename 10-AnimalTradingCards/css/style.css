@@ -1,0 +1,160 @@
+/* add your CSS here */
+
+html {
+    margin: auto;
+    background-color: aliceblue;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    ;
+}
+
+div {
+    text-align: justify;
+    margin: auto;
+}
+
+p {
+    text-align: center;
+    margin: 5px;
+}
+
+/* Card CSS */
+
+.card {
+    border-radius: 25px;
+    border-style: solid;
+    border-width: 1px;
+    background: #133338;
+    border-color: #4d4d4d;
+    -webkit-box-shadow: 8px 5px 0px 0px #c9c9c9;
+    -moz-box-shadow: 8px 5px 0px 0px rgba(201, 201, 201, 1);
+    box-shadow: 8px 5px 0px 0px rgba(201, 201, 201, 1);
+    margin: auto;
+    width: 350px;
+}
+
+.cardDetails {
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 3px;
+    border-color: #fff;
+    background-color: #ffffff;
+    margin: 15px;
+}
+
+.animal {
+    width: 100%;
+    border-style: none;
+    position: relative;
+}
+
+.animalImg {
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.animalName {
+    position: absolute;
+    bottom: 3px;
+    left: 5px;
+    width: 50%;
+    color: #fff;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom: none;
+    border-style: solid;
+    border-width: 3px;
+    border-bottom: none;
+    background: #133338;
+}
+
+.animalName p {
+    text-align: center;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.animalDetails {
+    text-align: center;
+    width: 95%;
+}
+
+.animalSpec ul {
+    list-style-type: none;
+    padding: 2px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.animalSpec li:nth-child(odd) {
+    background-color: #006994;
+    text-align: left;
+    padding: 5px;
+    width: 90%;
+    -webkit-clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+    clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+}
+
+.animalSpec li:nth-child(even) {
+    background-color: #1d4b52;
+    text-align: right;
+    padding: 5px;
+    margin: 5px;
+    width: 90%;
+    -webkit-clip-path: polygon(25% 0%, 100% 1%, 100% 100%, 25% 100%, 0% 50%);
+    clip-path: polygon(25% 0%, 100% 1%, 100% 100%, 25% 100%, 0% 50%);
+}
+
+.animalSpec li p {
+    padding: 5px;
+    margin: 0;
+}
+
+.animalSpec li b {
+    color: #fff;
+}
+
+.animalSpec li:nth-child(odd) p {
+    text-align: right;
+    padding-right: 20%;
+    color: #ff9000;
+}
+
+.animalSpec li:nth-child(even) p {
+    text-align: left;
+    padding-left: 20%;
+    color: #ff9000;
+}
+
+.emhasis {
+    font-style: italic;
+    text-align: center;
+}
+
+.animalDesc {
+    border-style: dashed;
+    border-color: #133338;
+    width: 85%;
+    border-radius: 5px;
+
+}
+
+/* End Card CSS */
+
+.projectInfo {
+    padding: 1em;
+    width: 60%;
+}
+
+.projectInfo h2 {
+    margin-left: 5%;
+}
+
+.projectInfo ul {
+    margin-left: 10%;
+}
+
+.projectInfo li {
+    padding: 5px;
+}
