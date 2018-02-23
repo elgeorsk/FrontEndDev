@@ -3,9 +3,8 @@
 html {
     margin: auto;
     background-color: aliceblue;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: "Ubuntu", sans-serif;
     font-size: 16px;
-    ;
 }
 
 div {
@@ -34,11 +33,9 @@ p {
 }
 
 .cardDetails {
-    border-style: solid;
+    border: 3px solid #fff;
     border-radius: 5px;
-    border-width: 3px;
-    border-color: #fff;
-    background-color: #ffffff;
+    background-color: #fff;
     margin: 15px;
 }
 
@@ -137,7 +134,6 @@ p {
     border-color: #133338;
     width: 85%;
     border-radius: 5px;
-
 }
 
 /* End Card CSS */
