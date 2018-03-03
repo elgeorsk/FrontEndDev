@@ -1,0 +1,146 @@
+html,
+body {
+    margin: auto;
+    background-color: aliceblue;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 16px;
+    width: 90%;
+}
+
+body {
+    background-color: #fff;
+}
+
+div,
+footer {
+    margin-top: 10px;
+    width: 100%;
+}
+
+/* Nav Header */
+.navbar-default {
+    border-bottom: 4px solid #7d97ad;
+}
+
+.navbar-brand img {
+    width: 100px;
+    height: 100px;
+}
+
+.navbar-text {
+    float: right;
+    text-align: right;
+    text-transform: uppercase;
+    font-size: 250%;
+}
+
+.specialism {
+    display: block;
+    font-size: 50%;
+}
+
+/* End Nav Header */
+
+/* Main container */
+.row {
+    width: auto;
+}
+
+.row h2 {
+    margin-left: 5%;
+    color: #7d97ad;
+    width: 100%;
+}
+
+.row img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 80%;
+    height: 80%;
+}
+
+.col-md-4 {
+    text-align: center;
+}
+
+.col-md-4 img {
+    -webkit-box-shadow: 0px 0px 16px 1px rgba(87, 87, 87, 1);
+    -moz-box-shadow: 0px 0px 16px 1px rgba(87, 87, 87, 1);
+    box-shadow: 0px 0px 16px 1px rgba(87, 87, 87, 1);
+}
+
+.col-md-4:hover img {
+    opacity: 0.3;
+    filter: alpha(opacity=30); /* For IE8 and earlier */
+}
+
+.featuredWork {
+    color: #2d3c49;
+}
+
+/* https://www.w3schools.com/howto/howto_css_image_overlay.asp */
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    width: 85%;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.col-md-4:hover .middle {
+    opacity: 1;
+}
+
+.text {
+    -webkit-border-bottom-right-radius: 100px;
+    -moz-border-radius-bottomright: 100px;
+    border-bottom-right-radius: 100px;
+    -webkit-box-shadow: 5px 5px 12px 1px rgba(87, 87, 87, 1);
+    -moz-box-shadow: 5px 5px 12px 1px rgba(87, 87, 87, 1);
+    box-shadow: 5px 5px 12px 1px rgba(87, 87, 87, 1);
+    background-color: #02b3e4;
+    color: white;
+    padding: 5px;
+}
+
+/* End Main container*/
+
+/* Footer */
+footer {
+    border-top: 4px solid #7d97ad;
+    text-align: center;
+    padding: 10px;
+}
+
+footer img {
+    margin: 10px;
+    width: 30%;
+    height: 30%;
+}
+
+/* End Footer*/
+
+/* Project info */
+.projectInfo {
+    padding: 1em;
+    width: 60%;
+}
+
+.projectInfo h2 {
+    margin-left: 5%;
+}
+
+.projectInfo ul {
+    margin-left: 10%;
+}
+
+.projectInfo li {
+    padding: 5px;
+}
+
+/* End Project info */
