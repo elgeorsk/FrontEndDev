@@ -38,7 +38,6 @@ footer {
     display: block;
     font-size: 50%;
 }
-
 /* End Nav Header */
 
 /* Main container */
@@ -52,6 +51,7 @@ footer {
     width: 100%;
 }
 
+.row picture,
 .row img {
     margin-left: auto;
     margin-right: auto;
@@ -107,7 +107,6 @@ footer {
     color: white;
     padding: 5px;
 }
-
 /* End Main container*/
 
 /* Footer */
@@ -122,25 +121,59 @@ footer img {
     width: 30%;
     height: 30%;
 }
-
 /* End Footer*/
 
-/* Project info */
-.projectInfo {
-    padding: 1em;
-    width: 60%;
+/* Media queries - Breakpoints */
+@media screen and (max-width: 768px) {
+    .navbar-text {
+        font-size: 200%;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
 }
 
-.projectInfo h2 {
-    margin-left: 5%;
+@media screen and (max-width: 732px) {
+    .col-md-4 {
+        width: 50%;
+    }
+
+    .navbar-text {
+        font-size: 150%;
+    }
 }
 
-.projectInfo ul {
-    margin-left: 10%;
-}
+@media screen and (max-width: 480px) {
+    .navbar-header {
+        text-align: center;
+    }
 
-.projectInfo li {
-    padding: 5px;
-}
+    .navbar-text {
+        font-size: 200%;
+        text-align: center;
+    }
 
-/* End Project info */
+    .container {
+        margin-top: 0;
+    }
+
+    .row img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .col-md-4 {
+        width: 100%;
+    }
+
+    .col-md-4 img {
+        width: 80%;
+        height: 80%;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+/* End Media queries - Breakpoints */
