@@ -10,5 +10,5 @@
  2. **_Portofolio Site_**
     
     Mockup of a website from a designer, translate it to a real website using HTML and CSS.
-    Here is the [project's link](https://).
+    Here is the [project's link](https://elgeorsk.github.io/FrontEndDev/1-WebFoundations/PortofolioSite/).
  
