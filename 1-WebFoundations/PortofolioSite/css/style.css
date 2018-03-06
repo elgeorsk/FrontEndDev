@@ -38,6 +38,7 @@ footer {
     display: block;
     font-size: 50%;
 }
+
 /* End Nav Header */
 
 /* Main container */
@@ -71,8 +72,8 @@ footer {
 }
 
 .col-md-4:hover img {
-    opacity: 0.3;
-    filter: alpha(opacity=30); /* For IE8 and earlier */
+    opacity: 0.4;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
 }
 
 .featuredWork {
@@ -80,8 +81,8 @@ footer {
 }
 
 /* https://www.w3schools.com/howto/howto_css_image_overlay.asp */
-.middle {
-    transition: .5s ease;
+.workLabel {
+    transition: 0.6s linear;
     opacity: 0;
     position: absolute;
     width: 85%;
@@ -92,7 +93,7 @@ footer {
     text-align: center;
 }
 
-.col-md-4:hover .middle {
+.col-md-4:hover .workLabel {
     opacity: 1;
 }
 
@@ -107,6 +108,7 @@ footer {
     color: white;
     padding: 5px;
 }
+
 /* End Main container*/
 
 /* Footer */
@@ -121,6 +123,7 @@ footer img {
     width: 30%;
     height: 30%;
 }
+
 /* End Footer*/
 
 /* Media queries - Breakpoints */
@@ -176,4 +179,5 @@ footer img {
         font-size: 1.5rem;
     }
 }
+
 /* End Media queries - Breakpoints */
