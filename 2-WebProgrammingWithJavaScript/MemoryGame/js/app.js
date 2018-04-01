@@ -185,8 +185,7 @@ $(".restart").on("click", restart);
 function modalDisplay() {
     modal.style.visibility = (modal.style.visibility == "visible") ? "hidden" : "visible";
     let text = document.getElementsByClassName("modal-text")[0];
-    score.innerHTML = "With " + (movesCounter - 1) + " Moves and " + document.getElementsByClassName("fa-star").length + " Stars."
-    + " in " + minutes + ":" +  seconds;
+    score.innerHTML = "With " + (movesCounter - 1) + " Moves and " + document.getElementsByClassName("fa-star").length + " Stars" + " in " + timeLi.innerText;
     text.appendChild(score);
 
     // Checkmark animation
