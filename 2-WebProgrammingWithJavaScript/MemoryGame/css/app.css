@@ -88,21 +88,21 @@ h1 {
  */
 
 .score-panel {
-    text-align: left;
-    width: 345px;
+    text-align: center;
+    width: 100%;
     margin-bottom: 10px;
 }
 
 .score-panel .stars,
-.score-panel .moves
-{
+.score-panel .moves {
     margin: 0;
     padding: 0;
     display: inline-block;
     margin: 0 5px 0 0;
 }
 
-.score-panel .timer{
+.score-panel .timer,
+.score-panel .button {
     margin: 0 15px 0 15px;
 }
 
@@ -116,6 +116,141 @@ time {
 }
 
 .score-panel .restart {
-    float: right;
     cursor: pointer;
+}
+
+.start-button , .restart {
+    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/* Modal pop-up */
+.modal {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-text {
+    position: absolute;
+    width: 500px;
+    top: 50%;
+    left: 50%;
+    border: 1px solid #000;
+    text-align: center;
+    box-shadow: 0 0 60px 10px rgba(0, 0, 0, 0.9);
+    background: #fff url('../img/geometry2.png');
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    padding-top: 110px;
+}
+
+.fa-trophy {
+    color: gold;
+    text-shadow: 0 0 25px #272634;
+}
+
+/* Animated Check Mark - https://codepen.io/ashleygalante/pen/nwoKh */
+.checkmark {
+    position: absolute;
+    padding-bottom: 50px;
+    z-index: 5000;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    padding-bottom: 110px;
+}
+
+.path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 0;
+    animation: dash 2s ease-in-out;
+    -ms-animation: dash 2s ease-in-out;
+    -webkit-animation: dash 2s ease-in-out;
+}
+
+.spin {
+    animation: spin 4s;
+    -ms-animation: spin 4s;
+    -webkit-animation: spin 4s;
+    transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -webkit-transform-origin: 50% 50%;
+}
+
+@-webkit-keyframes dash {
+    0% {
+        stroke-dashoffset: 1000;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dashoffset: 1000;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes text {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes text {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

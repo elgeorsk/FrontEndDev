@@ -1,26 +1,23 @@
-let counter = 0;
-let c = 1;
+let movesCounter = 0;
+let selectedCard = 1;
 let matches = 1;
 let openedCards = [];
+let seconds = 0, minutes = 0, tInterval;
+let stars = document.querySelectorAll(".stars li i");
+let modal = document.getElementById("myModal");
+let path = document.querySelector("path");
+let circle = document.getElementsByTagName("circle")[0];
+let polyline = document.querySelector("polyline");
+let circle1 = document.getElementsByTagName("circle")[1];
+let score = document.createElement("p");
 
-$(document).ready(function () {
-    deckInit();
-});
-
-/*
- * Create a list that holds all of your cards
- */
+/* List that holds all of your cards */
 const cards =
     ["fa-diamond", "fa-diamond", "fa-paper-plane-o", "fa-paper-plane-o", "fa-anchor", "fa-anchor",
         "fa-bolt", "fa-bolt", "fa-cube", "fa-cube", "fa-leaf", "fa-leaf",
         "fa-bicycle", "fa-bicycle", "fa-bomb", "fa-bomb"];
 
-/*
- * Display the cards on the page
- *   - shuffle the list of cards using the provided "shuffle" method below
- *   - loop through each card and create its HTML
- *   - add each card's HTML to the page
- */
+/* Memory Game Deck Initialization */
 function deckInit() {
     const suffledCards = shuffle(cards);
     const deck = document.createElement("ul");
@@ -36,8 +33,12 @@ function deckInit() {
     }
     $("div.container").append(deck);
     moves();
-    addEventListerToCard();
 }
+
+/* Create game's deck when document is ready */
+$(document).ready(function () {
+    deckInit();
+});
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(cards) {
@@ -54,35 +55,27 @@ function shuffle(cards) {
     return cards;
 }
 
-/*
- * set up the event listener for a card. If a card is clicked:
- *  - display the card's symbol (put this functionality in another function that you call from this one)
- *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
- *  - if the list already has another card, check to see if the two cards match
- *    + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
- *    + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
- *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
- *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
- */
-
+/* Add Listener - functionality on each card */
 function addEventListerToCard() {
     let cards = document.getElementsByTagName("li");
     for (let i = 1; i <= cards.length; i++) {
         cards[i - 1].addEventListener("click", function () {
-            cards[i - 1].classList.add("open","show");
-            moves();
-            openCards(cards[i - 1]);
+            if (!cards[i - 1].classList.contains("match") && !cards[i - 1].classList.contains("open")) {
+                cards[i - 1].classList.add("open", "show");
+                openCards(cards[i - 1]);
+            }
         });
     }
 }
 
+
+/* Handle opened cards -- if we have match or un-match */
 function openCards(card) {
-    if (c === 1) {
+    if (selectedCard === 1) {
         openedCards.push(card);
-    } else if (c === 2) {
+    } else if (selectedCard === 2) {
+        moves();
         openedCards.push(card);
-    }
-    if (c === 2) {
         if (openedCards[0].innerHTML === openedCards[1].innerHTML) {
             openedCards[0].classList.remove("open", "show");
             openedCards[1].classList.remove("open", "show");
@@ -90,48 +83,58 @@ function openCards(card) {
             openedCards[1].classList.add("match");
             checkIfAllCardsMatches();
         }
-    } else if ( c > 2) {
+    } else if (selectedCard > 2) {
         openedCards[0].classList.remove("open", "show");
         openedCards[1].classList.remove("open", "show");
         openedCards[0].classList.add("card");
         openedCards[1].classList.add("card");
         openedCards = [];
-        c = 1;
+        selectedCard = 1;
         openedCards.push(card);
     }
-    c++;
+    selectedCard++;
 }
 
-function checkIfAllCardsMatches(){
-    if (matches === cards.length/2) {
-        console.log("Success");
-        this.alert("Success");
+/* Checked if games has finished */
+function checkIfAllCardsMatches() {
+    if (matches === cards.length / 2) {
+        modalDisplay();
+        //stop timer
+        clearTimeout(tInterval);
     }
     matches++;
 }
 
+/* Counts player's moves */
 function moves() {
-    if (counter <= 1) {
-        $("span.moves").text(counter + " Move");
+    if (movesCounter <= 1) {
+        $("span.moves").text(movesCounter + " Move");
     } else {
-        $("span.moves").text(counter + " Moves");
+        $("span.moves").text(movesCounter + " Moves");
     }
-    counter++;
+
+    // stars rating
+    if (movesCounter >= 30) {
+        stars[1].classList.remove("fa-star");
+        stars[1].classList.add("fa-star-o");
+    } else if (movesCounter >= 24 && movesCounter < 30) {
+        stars[2].classList.remove("fa-star");
+        stars[2].classList.add("fa-star-o");
+    }
+    movesCounter++;
 }
 
 
-//create timer
+/* Timer */
 let timerDiv = document.createElement("span");
 timerDiv.classList.add("timer");
 let time = document.createElement("li");
 time.classList.add("fa", "fa-clock-o");
-let timeH1 = document.createElement("time");
-timeH1.innerHTML = "00:00:00";
+let timeLi = document.createElement("time");
+timeLi.innerHTML = "00:00";
 timerDiv.appendChild(time);
-timerDiv.appendChild(timeH1);
-$(".restart").before(timerDiv);
-
-let seconds = 0, minutes = 0, hours = 0, t;
+timerDiv.appendChild(timeLi);
+$(".start-button").before(timerDiv);
 
 function add() {
     seconds++;
@@ -140,25 +143,69 @@ function add() {
         minutes++;
         if (minutes >= 60) {
             minutes = 0;
-            hours++;
         }
     }
 
-    timeH1.innerText = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+    timeLi.innerText =
+        (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
     timer();
 }
 
 function timer() {
-    t = setTimeout(add, 1000);
+    tInterval = setTimeout(add, 1000);
 }
-timer();
 
-$(".restart").click(function () {
-    counter = 0;
-    timeH1.innerHTML = "00:00:00";
+function restart() {
+    movesCounter = 0;
+    matches = 1;
     seconds = 0;
     minutes = 0;
-    hours = 0;
+    timeLi.innerText = "00:00";
+    for (let i = 0; i < 3; i++) {
+        if (stars[i].classList.contains("fa-star-o")) {
+            stars[i].classList.remove("fa-star-o");
+            stars[i].classList.add("fa-star");
+        }
+    }
+    score.innerHTML = "";
+    path.classList.remove("path");
+    circle.classList.remove("path");
+    polyline.classList.remove("path");
+    circle1.classList.remove("spin");
+
     $(".deck").remove();
     deckInit();
+    addEventListerToCard();
+}
+
+/* Restart button */
+$(".restart").on("click", restart);
+
+/* Modal window */
+function modalDisplay() {
+    modal.style.visibility = (modal.style.visibility == "visible") ? "hidden" : "visible";
+    let text = document.getElementsByClassName("modal-text")[0];
+    score.innerHTML = "With " + (movesCounter - 1) + " Moves and " + document.getElementsByClassName("fa-star").length + " Stars."
+    + " in " + minutes + ":" +  seconds;
+    text.appendChild(score);
+
+    // Checkmark animation
+    path.classList.add("path");
+    circle.classList.add("path");
+    polyline.classList.add("path");
+    circle1.classList.add("spin");
+}
+
+$(".start-button").click(function() {
+    addEventListerToCard();
+    clearTimeout(tInterval);
+    timer();
 });
+
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.visibility = "hidden";
+        restart();
+        timer();
+    }
+}
