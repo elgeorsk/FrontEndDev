@@ -15,3 +15,6 @@
 ### 2. Web Programming with JavaScript
 #### Projects
 1. **_Memory Game_**
+
+    Build my own version of the classic memory game 'Concentration', using JavaScript, DOM selectors and Event Listeners.
+    Here is the [project's link](https://github.com/elgeorsk/FrontEndDev/tree/master/2-WebProgrammingWithJavaScript/MemoryGame/).
