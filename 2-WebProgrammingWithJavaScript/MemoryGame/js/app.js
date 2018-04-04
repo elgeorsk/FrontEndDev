@@ -207,4 +207,4 @@ window.onclick = function (event) {
         restart();
         timer();
     }
-}
+};
