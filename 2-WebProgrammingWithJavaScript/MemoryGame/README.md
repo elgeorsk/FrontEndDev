@@ -4,9 +4,13 @@ The Memory Game Project is the 3rd project of the Udacity Front End Nanodegree P
 
 ## Table of Contents
 
+* [Prerequisites](#prerequisites)
 * [Instructions](#instructions)
 * [Contributing](#contributing)
-* [Useful Links](#usefulLinks)
+* [Authors](#authors)
+* [Acknowledgments](#acknowledgments)
+
+## Prerequisites
 
 ## Instructions
 
@@ -23,9 +27,11 @@ This repository is the starter code for all Udacity students. Therefore, we most
 
 For details, check out [CONTRIBUTING.md](https://github.com/elgeorsk/FrontEndDev/blob/master/2-WebProgrammingWithJavaScript/MemoryGame/CONTRIBUTING.md).
 
-## Useful Links
+## Authors
+
+
+
+## Acknowledgments
 
 1) [Fisher-Yates (aka Knuth) Shuffle](http://stackoverflow.com/a/2450976) algorithm.
 2) About animated check mark you can take a look on this implemented code by [Ashley](https://codepen.io/ashleygalante/pen/nwoKh).
-
-
