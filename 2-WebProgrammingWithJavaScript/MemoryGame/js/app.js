@@ -40,7 +40,10 @@ $(document).ready(function () {
     deckInit();
 });
 
-// Shuffle function from http://stackoverflow.com/a/2450976
+/**
+ * @description Shuffle function - related link http://stackoverflow.com/a/2450976
+ * @param {Array} cards - an array of cards.
+ */
 function shuffle(cards) {
     let currentIndex = cards.length, temporaryValue, randomIndex;
 

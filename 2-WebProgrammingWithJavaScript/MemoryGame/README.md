@@ -4,14 +4,26 @@ The Memory Game Project is the 3rd project of the Udacity Front End Nanodegree P
 
 ## Table of Contents
 
-* [Prerequisites](#prerequisites)
+* [Code Dependencies](#CodeDependencies)
 * [Instructions](#instructions)
 * [Contributing](#contributing)
 * [Authors](#authors)
 * [Acknowledgments](#acknowledgments)
 
-## Prerequisites
+## Code Dependencies
 
+1) app.css - Includes all necessary code in order to style game's HTML document.
+   It has been tested on:
+   * Desktop.
+   * Mobile: Google Nexus 5, iPhone 6/7/8.
+   
+2) app.js - Includes JavaScript code which describes the game's full functionality.
+
+3) index.html - Game HTML document. 
+   Some code dependencies:
+   * [jQuery 3.3.1](https://code.jquery.com/jquery-3.3.1.min.js)
+   * [Font-awesome CSS 4.7.0](https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css)
+   
 ## Instructions
 
 1) Open [Memory Game](https://elgeorsk.github.io/FrontEndDev/2-WebProgrammingWithJavaScript/MemoryGame/) on your favorite browser.
@@ -29,7 +41,7 @@ For details, check out [CONTRIBUTING.md](https://github.com/elgeorsk/FrontEndDev
 
 ## Authors
 
-
+* [**Elefterios Georgiou**](https://github.com/elgeorsk)
 
 ## Acknowledgments
 
