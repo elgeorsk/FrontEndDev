@@ -4,7 +4,7 @@ The Memory Game Project is the 3rd project of the Udacity Front End Nanodegree P
 
 ## Table of Contents
 
-* [Code Dependencies](#CodeDependencies)
+* [Code Dependencies](#code-dependencies)
 * [Instructions](#instructions)
 * [Contributing](#contributing)
 * [Authors](#authors)
