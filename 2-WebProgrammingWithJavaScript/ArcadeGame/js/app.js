@@ -27,7 +27,7 @@ Enemy.prototype.update = function (dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-    this.posX += this.speed * dt
+    this.posX += this.speed * dt;
 
     // Emeny starts again from the left in random position and speed
     if (this.posX > playerMaxX + rowImX) {
@@ -39,6 +39,8 @@ Enemy.prototype.update = function (dt) {
     //Check collision between player and enemy
     if (player.posX >= this.posX - 50 && player.posX <= this.posX + 50) {
         if (player.posY >= this.posY - 50 && player.posY <= this.posY + 50) {
+            allEnemies.splice(2,4);
+            addStones();
             player.posX = startPositionX;
             player.posY = startPositionY;
             player.sprite = playerSprite[Math.floor(Math.random() * 5)];
@@ -65,6 +67,8 @@ let Player = function (posX, posY) {
 Player.prototype.update = function () {
     //If players reach the water (MinY position) will return to the start position
     if (this.posY <= playerMinY) {
+        allEnemies.splice(2,4);
+        addStones();
         player.posX = startPositionX;
         player.posY = startPositionY;
         player.sprite = playerSprite[Math.floor(Math.random() * 5)];
@@ -101,6 +105,16 @@ for (var i = 0; i < 3; i++) {
     let enemy = new Enemy(-rowImX, rowImY * (Math.floor(Math.random() * 3) + 1) - 20, Math.random() * 100);
     allEnemies.push(enemy);
 }
+addStones();
+
+function addStones(){
+    for (var i = 0; i < 2; i++) {
+        let stone = new Enemy(rowImX * (Math.floor(Math.random() * 4)),rowImY * 4 - 20, 0);
+        stone.sprite = 'images/Rock.png';
+        allEnemies.push(stone);
+    }
+}
+
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.

@@ -1,6 +1,6 @@
 html {
-    margin: auto;
-    font-family: "Ubuntu", sans-serif;
+    margin: auto 0;
+    font-family: 'Press Start 2P', cursive, sans-serif;
     font-size: 16px;
     color: #fff;
 }
@@ -15,4 +15,10 @@ canvas {
     -webkit-box-shadow: -71px 20px 56px -60px rgba(252, 252, 252, 1);
     -moz-box-shadow: -71px 20px 56px -60px rgba(252, 252, 252, 1);
     box-shadow: -71px 20px 56px -60px rgba(252, 252, 252, 1);
+}
+
+.instructions{
+    background-color: black;
+    width: 50%;
+    margin: auto;
 }
