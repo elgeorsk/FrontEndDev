@@ -1,0 +1,18 @@
+html {
+    margin: auto;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 16px;
+    color: #fff;
+}
+
+body {
+    text-align: center;
+    background-image: url('http://backgroundcheckall.com/wp-content/uploads/2017/12/arcade-background-1.jpg');
+    background-color: #fff;
+}
+
+canvas {
+    -webkit-box-shadow: -71px 20px 56px -60px rgba(252, 252, 252, 1);
+    -moz-box-shadow: -71px 20px 56px -60px rgba(252, 252, 252, 1);
+    box-shadow: -71px 20px 56px -60px rgba(252, 252, 252, 1);
+}
