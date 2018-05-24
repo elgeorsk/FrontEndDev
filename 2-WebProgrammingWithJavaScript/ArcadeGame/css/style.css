@@ -17,8 +17,32 @@ canvas {
     box-shadow: -71px 20px 56px -60px rgba(252, 252, 252, 1);
 }
 
-.instructions{
-    background-color: black;
-    width: 50%;
-    margin: auto;
+.instructions {
+    font-size: 14px;
+    position:absolute;
+    top: 700px;
+    bottom: 50px;
+    width: 80%;
+    left: 10%;
+    right: 10%;
+    background-color: #427fca;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+}
+
+.instructions ol {
+    padding: 0 0 2% 20%;
+    background-color: inherit;
+}
+
+.instructions li {
+    line-height: 200%;
+    text-align: left;
+}
+
+.instructions img {
+    vertical-align: middle;
+    width: 100px;
+    height: 80px;
 }

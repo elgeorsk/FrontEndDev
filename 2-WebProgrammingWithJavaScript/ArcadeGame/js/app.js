@@ -29,7 +29,7 @@ Enemy.prototype.update = function (dt) {
     // all computers.
     this.posX += this.speed * dt;
 
-    // Emeny starts again from the left in random position and speed
+    // Enemy starts again from the left in random position and speed
     if (this.posX > playerMaxX + rowImX) {
         this.posX = -rowImX;
         this.posY = rowImY * (Math.floor(Math.random() * 3) + 1) - 20;
@@ -107,6 +107,7 @@ for (var i = 0; i < 3; i++) {
 }
 addStones();
 
+// Add stone enemy
 function addStones(){
     for (var i = 0; i < 2; i++) {
         let stone = new Enemy(rowImX * (Math.floor(Math.random() * 4)),rowImY * 4 - 20, 0);
@@ -115,10 +116,20 @@ function addStones(){
     }
 }
 
+// instruction div
+let instructionDiv = document.createElement('div');
+instructionDiv.setAttribute('class', 'instructions');
+instructionDiv.innerHTML = '<h2>Game Instructions</h2>' +
+    '<ol>' +
+    '<li>Use the arrows <img src="images/keys.png"> in order to move your player!</li>' +
+    '<li>Avoid rocks, bugs and water!</li>' +
+    '<li>Have fun!</li>' +
+    '</ol>';
+document.body.appendChild(instructionDiv);
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
-document.addEventListener('keyup', function (e) {
+document.addEventListener('keyup', function(e) {
     var allowedKeys = {
         37: 'left',
         38: 'up',
@@ -127,5 +138,4 @@ document.addEventListener('keyup', function (e) {
     };
 
     player.handleInput(allowedKeys[e.keyCode]);
-    console.log(allowedKeys[e.keyCode]);
 });
