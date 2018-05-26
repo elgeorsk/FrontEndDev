@@ -20,3 +20,6 @@
     Here is the [project's link](https://github.com/elgeorsk/FrontEndDev/tree/master/2-WebProgrammingWithJavaScript/MemoryGame/).
 
 2. **_Classic Arcade Game_**
+
+    The Classic Arcade Game - Frogger - using Javascript.
+    Here is the link [project's link](https://github.com/elgeorsk/FrontEndDev/tree/master/2-WebProgrammingWithJavaScript/ArcadeGame).
