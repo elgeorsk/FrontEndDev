@@ -37,8 +37,8 @@ Enemy.prototype.update = function (dt) {
     }
 
     //Check collision between player and enemy
-    if (player.posX >= this.posX - 50 && player.posX <= this.posX + 50) {
-        if (player.posY >= this.posY - 50 && player.posY <= this.posY + 50) {
+    if (player.posX >= this.posX - 70 && player.posX <= this.posX + 70) {
+        if (player.posY >= this.posY - 70 && player.posY <= this.posY + 70) {
             allEnemies.splice(2,4);
             addStones();
             player.posX = startPositionX;
@@ -69,9 +69,9 @@ Player.prototype.update = function () {
     if (this.posY <= playerMinY) {
         allEnemies.splice(2,4);
         addStones();
-        player.posX = startPositionX;
-        player.posY = startPositionY;
-        player.sprite = playerSprite[Math.floor(Math.random() * 5)];
+        this.posX = startPositionX;
+        this.posY = startPositionY;
+        this.sprite = playerSprite[Math.floor(Math.random() * 5)];
     }
 }
 
@@ -80,17 +80,17 @@ Player.prototype.render = function () {
 };
 
 Player.prototype.handleInput = function (keyPress) {
-    if (keyPress == 'left' && player.posX > playerMinX) {
-        player.posX = player.posX - rowImX;
+    if (keyPress == 'left' && this.posX > playerMinX) {
+        this.posX = this.posX - rowImX;
     }
-    if (keyPress == 'up' && player.posY > playerMinY) {
-        player.posY = player.posY - rowImY;
+    if (keyPress == 'up' && this.posY > playerMinY) {
+        this.posY = this.posY - rowImY;
     }
-    if (keyPress == 'right' && player.posX < playerMaxX) {
-        player.posX = player.posX + rowImX;
+    if (keyPress == 'right' && this.posX < playerMaxX) {
+        this.posX = this.posX + rowImX;
     }
-    if (keyPress == 'down' && player.posY < playerMaxY) {
-        player.posY = player.posY + rowImY;
+    if (keyPress == 'down' && this.posY < playerMaxY) {
+        this.posY = this.posY + rowImY;
     }
 };
 
@@ -100,7 +100,7 @@ Player.prototype.handleInput = function (keyPress) {
 const player = new Player(startPositionX, startPositionY);
 const allEnemies = [];
 for (var i = 0; i < 3; i++) {
-    // the enemy will appear only on stone-block (on Y-axis is position 0-1-2 out of 5
+    // the enemy will appear only on stone-block (on Y-axis is position 0-1-2 out of 5)
     // Math.floor(Math.random() * 3 -> reproduces numbers 0,1,2
     let enemy = new Enemy(-rowImX, rowImY * (Math.floor(Math.random() * 3) + 1) - 20, Math.random() * 100);
     allEnemies.push(enemy);
