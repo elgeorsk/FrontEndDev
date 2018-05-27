@@ -1,3 +1,7 @@
+// 'use strict' is helpful because it forces you to write better code by preventing functions
+// with bad syntax from executing and requiring you to declare a variable before using it.
+'use strict';
+
 // rowImage size
 const rowImX = 101;
 const rowImY = 83;
@@ -37,15 +41,7 @@ Enemy.prototype.update = function (dt) {
     }
 
     //Check collision between player and enemy
-    if (player.posX >= this.posX - 70 && player.posX <= this.posX + 70) {
-        if (player.posY >= this.posY - 70 && player.posY <= this.posY + 70) {
-            allEnemies.splice(2,4);
-            addStones();
-            player.posX = startPositionX;
-            player.posY = startPositionY;
-            player.sprite = playerSprite[Math.floor(Math.random() * 5)];
-        }
-    }
+    checkCollisionWithPlayer(this);
 };
 
 // Draw the enemy on the screen, required method for game
@@ -113,6 +109,19 @@ function addStones(){
         let stone = new Enemy(rowImX * (Math.floor(Math.random() * 4)),rowImY * 4 - 20, 0);
         stone.sprite = 'images/Rock.png';
         allEnemies.push(stone);
+    }
+}
+
+// Method to check collision between player and enemy
+function checkCollisionWithPlayer(enemy){
+    if (player.posX >= enemy.posX - 70 && player.posX <= enemy.posX + 70) {
+        if (player.posY >= enemy.posY - 70 && player.posY <= enemy.posY + 70) {
+            allEnemies.splice(2,4);
+            addStones();
+            player.posX = startPositionX;
+            player.posY = startPositionY;
+            player.sprite = playerSprite[Math.floor(Math.random() * 5)];
+        }
     }
 }
 

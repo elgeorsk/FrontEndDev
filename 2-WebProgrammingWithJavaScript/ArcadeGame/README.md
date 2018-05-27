@@ -40,5 +40,6 @@ It is a complete browser-based arcade game.
 ## Acknowledgments
 
 * Wikipedia [Frogger](https://en.wikipedia.org/wiki/Frogger).
+* 'use strict' [Strict mode ](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode).
 * [Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random).
 * Interesting Tutorial about an [Frogger Arcade Game](https://sites.santarosa.k12.fl.us/nhs/teacher_pages/arringtonpages/docs/FroggerTutorial.pdf).
