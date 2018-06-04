@@ -23,3 +23,10 @@
 
     The Classic Arcade Game - Frogger - using Javascript.
     Here is the link [project's link](https://github.com/elgeorsk/FrontEndDev/tree/master/2-WebProgrammingWithJavaScript/ArcadeGame).
+
+### 3. Exploring JS - Objects, Tools and Testing
+### Project
+1. **_Feed Reader Testing_**
+    
+    Handed a feed reader another developer has worked on and now need to write tests against it using Jasmine's testing syntax.
+    Here is the link [project's link]().
